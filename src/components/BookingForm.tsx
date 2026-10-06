@@ -44,7 +44,7 @@ const BookingForm = () => {
 - *Telefone:* ${formData.city}
 - *Modalidade:* ${formData.modality === "mensagem" ? "Atendimento por Mensagem" : "Atendimento por Chamada"}
 - *Motivo:* ${formData.reason}
-- *Pagamento:* ${paymentMethod === "mpesa" ? "M-Pesa" : "e-Mola"}
+- *Pagamento:* ${paymentMethod === "mpesa" ? "M-Pesa" : paymentMethod === "emola" ? "e-Mola" : "PayPal"}
 
 Aguardando instruções para o próximo passo.`;
 
@@ -189,6 +189,7 @@ Aguardando instruções para o próximo passo.`;
               {[
                 { value: "mpesa", label: "M-Pesa" },
                 { value: "emola", label: "e-Mola" },
+                { value: "paypal", label: "PayPal" },
               ].map((opt) => (
                 <button
                   type="button"
@@ -220,7 +221,7 @@ Aguardando instruções para o próximo passo.`;
                     +258 845252068
                   </p>
                   <p className="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">
-                    Titular: Jéssica Alzira
+                    Titular: Jéssica da Alzira
                   </p>
                 </motion.div>
               )}
@@ -238,7 +239,25 @@ Aguardando instruções para o próximo passo.`;
                     +258 874552068
                   </p>
                   <p className="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">
-                    Titular: Jéssica Alzira
+                    Titular: Jéssica da Alzira
+                  </p>
+                </motion.div>
+              )}
+              {paymentMethod === "paypal" && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="bg-white border border-border rounded-lg p-5 text-center shadow-sm"
+                >
+                  <p className="font-body text-sm text-foreground mb-1">
+                    E-mail para pagamento via <strong>PayPal</strong>:
+                  </p>
+                  <p className="font-display text-base md:text-lg font-bold text-primary break-all">
+                    jessica.mmuchanga3@gmail.com
+                  </p>
+                  <p className="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">
+                    Titular: Jéssica da Alzira
                   </p>
                 </motion.div>
               )}

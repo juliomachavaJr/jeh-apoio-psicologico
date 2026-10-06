@@ -21,7 +21,7 @@ const AboutSection = () => {
         >
           <div className="flex flex-col md:flex-row gap-10 items-center text-left mb-16">
             <div className="md:w-1/3 w-2/3 mx-auto">
-              <img src={professionalPhoto} alt="Jéssica Alzira" className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]" />
+              <img src={professionalPhoto} alt="Jéssica da Alzira" className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]" />
             </div>
             <div className="md:w-2/3">
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-2">
